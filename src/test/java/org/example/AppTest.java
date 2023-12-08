@@ -22,7 +22,7 @@ public class AppTest {
 
     @Test
     public void getBookById() {
-        String bookId = "c0663b09-6e5a-468c-8b3b-6ab907114e1a";
+        String bookId = "83d6cace-83e4-48c0-8293-c1953205c525";
 
         Response getResponse = given()
                 .baseUri(defaultBaseUrl)
@@ -43,7 +43,7 @@ public class AppTest {
 
     @Test
     public void updateBook() {
-        String bookId = "c0663b09-6e5a-468c-8b3b-6ab907114e1a";
+        String bookId = "a57ba245-9371-496d-bdee-10f65c2f9372";
 
         AuthorRequest authorRequest = new AuthorRequest();
         authorRequest.setName("author name 1");
@@ -74,7 +74,7 @@ public class AppTest {
 
     @Test
     public void patchBook() {
-        String bookId = "eb958105-dce5-4181-8dbd-16ad2de40da8";
+        String bookId = "1b7846de-3148-45f6-b063-f097f375ea43";
 
         BookRequest bookRequest = new BookRequest();
         bookRequest.setTitle("book title 2");
@@ -99,7 +99,7 @@ public class AppTest {
 
     @Test
     public void deleteBook() {
-        String bookId = "eb958105-dce5-4181-8dbd-16ad2de40da8";
+        String bookId = "1b7846de-3148-45f6-b063-f097f375ea43";
 
         Response deleteResponse = given()
                 .baseUri(defaultBaseUrl)
@@ -129,12 +129,12 @@ public class AppTest {
     @Test
     public void createBook() {
         AuthorRequest authorRequest = new AuthorRequest();
-        authorRequest.setName("new author name 1");
-        authorRequest.setAddress("new author address 1");
-        authorRequest.setPhoneNumber("new phone number 1");
+        authorRequest.setName("new author name 3");
+        authorRequest.setAddress("new author address 3");
+        authorRequest.setPhoneNumber("new phone number 3");
 
         BookRequest bookRequest = new BookRequest();
-        bookRequest.setTitle("new book title 1");
+        bookRequest.setTitle("new book title 3");
         bookRequest.setAuthor(authorRequest);
 
         Response createResponse = given()
@@ -153,7 +153,7 @@ public class AppTest {
     public void getBookFilter() {
         int page = 0;
         int size = 5;
-        String[] sort = new String[]{"id,asc"};
+        String[] sort = new String[]{"id,desc"};
         Response getBookFilterResponse = given()
                 .baseUri(defaultBaseUrl)
                 .accept("application/json")
