@@ -74,7 +74,7 @@ public class AppTest {
 
     @Test
     public void patchBook() {
-        String bookId = "1b7846de-3148-45f6-b063-f097f375ea43";
+        String bookId = "69363b9c-4bea-40da-852f-4f581b7a38bb";
 
         BookRequest bookRequest = new BookRequest();
         bookRequest.setTitle("book title 2");
@@ -84,7 +84,8 @@ public class AppTest {
                 .accept("application/json")
                 .contentType("application/json")
                 .pathParam("id", bookId)
-                .body("{}")
+                .body("{}")                         // no changes
+//                .body(bookRequest)
                 .when().log().all().patch("/api/book/{id}");
         patchResponse.getBody().prettyPrint();
 
